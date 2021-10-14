@@ -18,7 +18,6 @@ const Messages = () => {
         dispatch(fetchMessages());
     }, [dispatch]); 
 
-
     return (
         <Grid container justifyContent='center' mt={3}>
             <Grid item container justifyContent="space-around" alignItems="center" mb={4}>
@@ -37,9 +36,8 @@ const Messages = () => {
                                 <ListItem alignItems="flex-start" key={msg.id}>
                                     <CardMedia
                                         component="img"
-                                        sx={{ width: 100, height: '100%' , marginRight: '2rem'}} 
-                                        image={msg.image}
-                                        // image={msg.image ? msg.image : 'No img'}
+                                        sx={{ width: 150, height: '100%' , marginRight: '2rem'}} 
+                                        image={apiURL + '/uploads/' + msg.image}
                                         alt=""
                                     />
                                     <ListItemText
