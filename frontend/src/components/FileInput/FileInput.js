@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { Grid, Button , TextField} from '@mui/material';
 
-const FileInput = () => {
+const FileInput = ({onChange, name, label}) => {
     const inputRef = useRef();
 
     const [filename, setFilename] = useState('');

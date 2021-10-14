@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Grid, Button , TextField} from '@mui/material';
 import FileInput from '../FileInput/FileInput';
 
-const MessageForm = () => {
+const MessageForm = ({onSubmit}) => {
     const [state, setState] = useState({
         author: "",
         message: "",

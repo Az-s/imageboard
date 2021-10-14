@@ -1,7 +1,8 @@
 import React from 'react';
-import Typography from "@material-ui/core/Typography";
+import Typography from '@mui/material/Typography';
 import { createMessage } from "../../store/actions/actions";
 import { useDispatch } from "react-redux";
+import MessageForm from '../../components/MessageForm/MessageForm';
 
 const NewMessages = ({ history }) => {
     const dispatch = useDispatch();
