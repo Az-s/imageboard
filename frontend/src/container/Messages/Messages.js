@@ -15,7 +15,9 @@ const Messages = () => {
     const messages = useSelector(state => state.messages.messages);
 
     useEffect(() => {
-        dispatch(fetchMessages());
+        setInterval(() => {
+            dispatch(fetchMessages());
+          }, 1000);
     }, [dispatch]); 
 
     return (
