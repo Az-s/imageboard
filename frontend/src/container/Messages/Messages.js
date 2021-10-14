@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { fetchMessages } from '../../store/actions/actions';
+import {apiURL} from "../../config";
 
 const Messages = () => {
     const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const Messages = () => {
 
     useEffect(() => {
         dispatch(fetchMessages());
-    }, [dispatch]);
+    }, [dispatch]); 
+
 
     return (
         <Grid container justifyContent='center' mt={3}>
@@ -35,8 +37,9 @@ const Messages = () => {
                                 <ListItem alignItems="flex-start" key={msg.id}>
                                     <CardMedia
                                         component="img"
-                                        sx={{ width: 151 }} 
-                                        image={msg.image ? msg.image : 'No img'}
+                                        sx={{ width: 100, height: '100%' , marginRight: '2rem'}} 
+                                        image={msg.image}
+                                        // image={msg.image ? msg.image : 'No img'}
                                         alt=""
                                     />
                                     <ListItemText
