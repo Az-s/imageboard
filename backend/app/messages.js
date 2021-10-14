@@ -19,31 +19,26 @@ const upload = multer({ storage });
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const products = fileDb.getItems();
-    res.send(products);
+    const messages = fileDb.getItems();
+    res.send(messages);
 });
 
 router.post('/', upload.single('image'), (req, res) => {
     if (!req.body.message) {
         return res.status(400).send({ error: 'Data not valid' });
     }
-
-    const product = {
-        author: req.body.author,
+    const message = {
+        author: req.body.author ? req.body.author : 'Anonymous',
         message: req.body.message,
     };
 
-    if (!req.body.author) {
-        req.body.author = 'anonymous';
-    }
-
     if (req.file) {
-        product.image = req.file.filename;
+        message.image = req.file.filename;
     }
 
-    const newProduct = fileDb.addItem(product);
+    const newMessage = fileDb.addItem(message);
 
-    res.send(newProduct);
+    res.send(newMessage);
 });
 
 module.exports = router;

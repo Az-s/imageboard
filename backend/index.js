@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const products = require('./app/products');
+const messages = require('./app/messages');
 const fileDb = require('./fileDb');
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 const port = 8000;
 
-app.use('/messages', products);
+app.use('/messages', messages);
 
 fileDb.init();
 app.listen(port, () => {
