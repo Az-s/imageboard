@@ -49,7 +49,7 @@ const MessageForm = ({onSubmit}) => {
                 <TextField
                     label="Author"
                     name="author"
-                    value={state.author ? state.author : 'Anonymous'}
+                    value={state.author}
                     onChange={inputChangeHandler}
                 />
             </Grid>

@@ -14,7 +14,7 @@ const NewMessages = ({ history }) => {
 
     return (
         <>
-            <Typography variant="h4">New message</Typography>
+            <Typography variant="h4" sx={{margin: '1rem 0'}}>New message</Typography>
             <MessageForm
                 onSubmit={onSubmit}
             />

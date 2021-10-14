@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import { Provider } from "react-redux";
+import { ThemeProvider } from '@mui/material/styles';
 import thunk from "redux-thunk";
 import reducer from './store/reducer/reducer'
 import App from './App';

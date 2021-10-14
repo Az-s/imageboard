@@ -19,7 +19,7 @@ const Messages = () => {
 
     return (
         <Grid container justifyContent='center' mt={3}>
-            <Grid item container justifyContent="space-between" alignItems="center">
+            <Grid item container justifyContent="space-around" alignItems="center" mb={4}>
                 <Grid item>
                     <Typography variant="h4">Messages</Typography>
                 </Grid>
@@ -35,8 +35,8 @@ const Messages = () => {
                                 <ListItem alignItems="flex-start" key={msg.id}>
                                     <CardMedia
                                         component="img"
-                                        sx={{ width: 151 }}
-                                        image={msg.image}
+                                        sx={{ width: 151 }} 
+                                        image={msg.image ? msg.image : 'No img'}
                                         alt=""
                                     />
                                     <ListItemText
